@@ -1,0 +1,20 @@
+# nfpm configuration file
+# values for this file are taken from the https://github.com/nats-io/nats-server project
+name: nats-server
+arch: s390x
+platform: linux
+version: v2.8.4
+version_schema: semvar
+description: High-Performance server for NATS, the cloud native messaging system.
+vendor: Synadia Inc.
+homepage: https://nats.io
+license: Apache 2.0
+replaces:
+  - nats-server
+provides:
+  - nats-server
+maintainer: "LinuxForHealth"
+contents:
+  - src: ./build/release/nats-server
+    dst: /usr/local/bin/nats-server
+
