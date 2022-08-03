@@ -10,9 +10,17 @@ nats-390x-package has the following dependencies:
 - [go](https://go.dev/) to build NATS from source
 - [nfpm](https://github.com/goreleaser/nfpm) to create the debian package
 
-## Quickstart 
+## Quickstart - The Easy Way
 
-Run `build.sh` to create a package for nats-server v2.8.4
+Browse the project's [releases](https://github.com/LinuxForHealth/nats-390x-package/releases) and download a package.
+
+## Quickstart - Build From Scratch
+
+If you need to customize the build process or build from scratch you will need to work with `build.sh` and `nfpm.yml`, 
+the nfpm configuration file, directly.
+
+### build.sh
+Run `build.sh` to create a package for nats-server v2.8.4.
 
 ```shell
 user@MBP nats-390x-package % ./build.sh
@@ -30,7 +38,7 @@ NATS build complete.
 nats-server is located in build/release/nats-server
 Creating deb package file
 using deb packager...
-created package: build/release/nats-server_2.8.4_s390x.deb
+created package: build/release/nats-server_2.8.4.01_s390x.deb
 ```
 
 `build.sh` is designed to download a "source tarball" from the [nats-server github repo](https://github.com/nats-io/nats-server/releases)
@@ -40,3 +48,7 @@ release, invoke build.sh with the `-n` or `--nats-release` option
 ```shell
 ./build.sh --nats-release https://github.com/nats-io/nats-server/archive/refs/tags/v2.8.2.tar.gz
 ```
+
+### nfpm configuration
+To modify the debian package, please refer to the [nfpm configuration docs](https://nfpm.goreleaser.com/configuration/).
+

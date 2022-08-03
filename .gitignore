@@ -4,3 +4,6 @@ build
 # exclude IDE configurations
 .idea
 .vscode
+
+# workstation temp files
+.DS_Store
